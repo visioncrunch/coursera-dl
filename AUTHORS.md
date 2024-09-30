@@ -19,3 +19,12 @@ you have at least one contribution to the project.
 * Mohammad Amin Solhizadeh
 * Victor Westmann
 * Yuri Bochkarev
+
+--------------------------
+additional code
+-
+from pending pr 863
+* Ahmed-Elkhalifa
+
+small fix in utils.py line 103
+* rawsalt
