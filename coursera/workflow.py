@@ -223,6 +223,10 @@ class CourseraDownloader(CourseDownloader):
         # Decide whether we need to download it
         if overwrite or not os.path.exists(lecture_filename) or resume:
             if not skip_download:
+                if url is None:
+                    # Skip this resource if the URL is None
+                    print(f"Skipping resource with None URL for URL: {url}")
+                    return last_update  # or handle appropriately
                 if url.startswith(IN_MEMORY_MARKER):
                     page_content = url[len(IN_MEMORY_MARKER):]
                     logging.info('Saving page contents to: %s', lecture_filename)
