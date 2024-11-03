@@ -1,7 +1,8 @@
 
 ---
 
-# Coursera Course Downloader
+# Coursera Course Downloader 
+### (Only works for cauth token fetched from Chrome Browser)
 
 This guide will help you set up and use the customized `coursera-dl` tool to download courses from Coursera.
 
@@ -18,7 +19,6 @@ Before you begin, make sure you have the following installed:
 
 2. **Open Developer Tools**:
    - In **Google Chrome**: Right-click anywhere on the page and select **Inspect**, or press `Ctrl + Shift + I` (Windows/Linux) or `Cmd + Option + I` (Mac).
-   - In **Firefox**: Right-click on the page and select **Inspect Element**, or press `Ctrl + Shift + I` (Windows/Linux) or `Cmd + Option + I` (Mac).
 
 3. **Navigate to the Application Tab**:
    - In the Developer Tools panel, click on the **Application** tab (in Chrome) or the **Storage** tab (in Firefox).
