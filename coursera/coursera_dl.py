@@ -49,7 +49,6 @@ import re
 import time
 import shutil
 
-from distutils.version import LooseVersion as V
 
 
 # Test versions of some critical modules.
@@ -77,13 +76,6 @@ from .extractors import CourseraExtractor
 
 from coursera import __version__
 
-
-# URL containing information about outdated modules
-_SEE_URL = " See https://github.com/coursera-dl/coursera/issues/139"
-
-assert V(requests.__version__) >= V('2.4'), "Upgrade requests!" + _SEE_URL
-assert V(six.__version__) >= V('1.5'), "Upgrade six!" + _SEE_URL
-assert V(bs4.__version__) >= V('4.1'), "Upgrade bs4!" + _SEE_URL
 
 
 def get_session():
