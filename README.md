@@ -38,11 +38,17 @@ Before starting, ensure the following are installed:
 
 ### 1. Create and activate a virtual environment:
 ```bash
+mkdir courses_folder
+cd courses_folder     # For Windows
+```
+
+### 2. Create and activate a virtual environment:
+```bash
 python -m venv myenv
 .\myenv\Scripts\activate     # For Windows
 ```
 
-### 2. Install the customized coursera-dl tool:
+### 3. Install the customized coursera-dl tool:
 ```bash
 pip install git+https://github.com/visioncrunch/coursera-dl
 ```
