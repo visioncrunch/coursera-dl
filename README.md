@@ -1,72 +1,93 @@
+---
+
+# 🚀 Coursera Course Downloader  
+### *(Works with `cauth` token from your Chrome browser)*
+
+This guide walks you through setting up and using the customized `coursera-dl` tool to download videos and materials from Coursera courses.
 
 ---
 
-# Coursera Course Downloader 
-### (Only works for cauth token fetched from Chrome Browser)
+## 📋 Prerequisites
 
-This guide will help you set up and use the customized `coursera-dl` tool to download courses from Coursera.
+Before starting, ensure the following are installed:
 
-## Prerequisites
+- **Python**: Download from [python.org](https://www.python.org/downloads/).  
+  ✅ *Make sure to check "Add Python to PATH" during installation.*
 
-Before you begin, make sure you have the following installed:
+- **pip**: Comes pre-installed with Python 3.4+. If not, [install pip](https://pip.pypa.io/en/stable/installation/).
 
-- **Python**: You can download Python from [python.org](https://www.python.org/downloads/). Ensure you add Python to your system's PATH during installation.
-- **pip**: This is included with Python installations starting from version 3.4. If you don't have it, you can find instructions to install it [here](https://pip.pypa.io/en/stable/installation/).
+---
 
-## Getting Your `cauth` String
+## 🔑 How to Get Your `cauth` Token
 
-1. **Log into Coursera**: Open your web browser and go to [Coursera](https://www.coursera.org/). Log in to your account.
+1. **Log in** to your Coursera account at [coursera.org](https://www.coursera.org).
 
 2. **Open Developer Tools**:
-   - In **Google Chrome**: Right-click anywhere on the page and select **Inspect**, or press `Ctrl + Shift + I` (Windows/Linux) or `Cmd + Option + I` (Mac).
+   - In Chrome: Press `Ctrl + Shift + I` (or `Cmd + Option + I` on Mac)  
+   - Or right-click anywhere on the page → **Inspect**
 
-3. **Navigate to the Application Tab**:
-   - In the Developer Tools panel, click on the **Application** tab (in Chrome) or the **Storage** tab (in Firefox).
+3. Go to the **Application** tab → Expand **Cookies** → Select `https://www.coursera.org`.
 
-4. **Find Cookies**:
-   - Under the **Cookies** section, find and select `www.coursera.org`.
+4. Look for the cookie named `cauth`.
 
-5. **Locate the `cauth` Cookie**:
-   - Look for a cookie named `cauth`. This is your authentication string.
-   - **Copy the Value** of the `cauth` cookie.
+5. **Copy its Value** — this is your login token used for downloading.
 
-## Installation
+---
 
-1. Open your command prompt (cmd) or terminal.
-2. Run the following command to install `coursera-dl`:
+## ⚙️ Installation
 
-   ```bash
-   pip install git+https://github.com/visioncrunch/coursera-dl
-   ```
+### 1. Create and activate a virtual environment:
+```bash
+python -m venv myenv
+.\myenv\Scripts\activate     # For Windows
+```
 
-## Downloading Courses
+### 2. Install the customized coursera-dl tool:
+```bash
+pip install git+https://github.com/visioncrunch/coursera-dl
+```
 
-1. Navigate to the folder where you want the course files to be downloaded. You can do this by using the `cd` command. For example:
+---
 
-   ```bash
-   cd path\to\your\desired\folder
-   ```
+## ⬇️ Downloading a Course
 
-2. Run the following command to download the course, replacing `<your_cauth_string>` and `<course_name>` with your actual Coursera `cauth` string and the course name as it appears in the homepage URL of that course:
+Use the following command to download a course:
 
-   ```bash
-   coursera-dl --jobs 10 -ca "<your_cauth_string>" <course_name>
-   ```
+```bash
+coursera-dl --jobs 10 -ca "<your_cauth_string>" <course_name>
+```
 
-   **Example:**
-   ```bash
-   coursera-dl --jobs 10 -ca "1FGkyRadOL2bOT4gaMD7IPBi0S5AIeneEcxMrbEzKhmwG7nnu9VzqPliCvZ3J9aJEg2k8Xej8oqf2MYgLCmSRA.owD5wzu4O3AE65AsQ1H7TA.gbi8b2RiH5hTURcWO_K8EOeInWCKnu0Gm_3bLFiAQlaf1vH6l7OfQswwlZvZIR0wXGwy4b43hQpKL1XbZLgkErXIwT0jBqyv50iRpi2LkHp1oKF5kH62qS9l6IpCdHpGPDomsmaSK17iceG5qbbbqX3eHrwJlqbmHMBnetqUG59NrYoXrEsij36rIssrrKRaHlyY5DVDlSL4kiBs5uOaPa89NvZVoHTDzMVkx--poE_KI7QJXL_dKmQAKJLOG5UxfZLFXWt1G4_3ADtIl2Y7HUL124xISS7sdD177twJ9-btlqppza8j2YRtgqLSOt9o9xFdFAGT5TtRGlIR_18D84DLR7Y2bLQ9Nt2NArPx9xGdJF5nz55mFeOfTU7vKLx5xnOgUCILCnUBe-9NM4238q_ciFKF2_C9VyoyLpsG4pWJ6b0xxBsOweE5Sx2VjSQP" relational-database-management-systems
-   ```
+### 🔁 Replace:
+- `<your_cauth_string>` → Your actual `cauth` token from browser cookies
+- `<course_name>` → The course slug from the course URL
 
-3. Wait for the course to download. The tool will handle downloading all course materials, and you will see the progress in your command prompt.
+> **Example:**
+> If the course URL is `https://www.coursera.org/learn/relational-database-management-systems`, the course name is:
+> ```
+> relational-database-management-systems
+> ```
 
-## Troubleshooting
+### ✅ Example Command:
 
-- If you encounter issues with the download, ensure that your `cauth` string is correct and that the course name matches the course URL on Coursera.
-- Check your internet connection if the download fails unexpectedly.
+```bash
+coursera-dl --jobs 10 -ca "your_actual_cauth_here" relational-database-management-systems
+```
 
-## License
+> This will download the entire course to your current folder.
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+---
+
+## ❓ Troubleshooting
+
+- 🧠 Make sure your `cauth` string is **current** — re-copy it if downloads fail.
+- 🔍 Double-check the course name — it must match the URL slug exactly.
+- 🌐 Ensure your internet connection is stable.
+- 🛡️ If a firewall or antivirus interferes, consider whitelisting the Python process.
+
+---
+
+## 📄 License
+
+This tool is licensed under the **MIT License**. See the [LICENSE](LICENSE) file in the GitHub repo for more details.
 
 ---
