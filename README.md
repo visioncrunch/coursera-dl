@@ -17,7 +17,13 @@ Before starting, ensure the following are installed:
 - **pip**: Comes pre-installed with Python 3.4+. If not, [install pip](https://pip.pypa.io/en/stable/installation/).
 
 ---
+## 🖼️ Reference: Locating the `cauth` Token
 
+Below is a screenshot to help you find the `cauth` token in Developer Tools:
+
+![Screenshot showing how to find the cauth token in Chrome Developer Tools](image.png)
+
+---
 ## 🔑 How to Get Your `cauth` Token
 
 1. **Log in** to your Coursera account at [coursera.org](https://www.coursera.org).
